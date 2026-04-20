@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support — LittleMinds Learning</title>
-  <meta name="description" content="Get help with LittleMinds Learning. FAQs, contact support, and troubleshooting guides." />
+  <meta name="description"
+    content="Get help with LittleMinds Learning. FAQs, contact support, and troubleshooting guides." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --purple: #5b2d8e;
@@ -36,11 +44,31 @@
       align-items: center;
       gap: 12px;
     }
-    nav a { text-decoration: none; }
-    nav .logo { font-size: 1.4rem; font-weight: 900; color: #fff; }
-    nav .logo span { color: var(--yellow); }
-    nav .back { margin-left: auto; color: rgba(255,255,255,0.75); font-size: 0.9rem; font-weight: 700; }
-    nav .back:hover { color: #fff; }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    nav .logo {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    nav .logo span {
+      color: var(--yellow);
+    }
+
+    nav .back {
+      margin-left: auto;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    nav .back:hover {
+      color: #fff;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -49,10 +77,25 @@
       padding: 64px 24px 80px;
       position: relative;
     }
-    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 12px; }
-    .hero p  { color: rgba(255,255,255,0.8); font-size: 1.05rem; font-weight: 600; }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
     .hero-wave {
-      position: absolute; bottom: -2px; left: 0; width: 100%;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
     }
 
     /* ── BODY ── */
@@ -70,11 +113,27 @@
       padding: 36px 32px;
       text-align: center;
       margin-bottom: 56px;
-      box-shadow: 0 8px 32px rgba(91,45,142,0.25);
+      box-shadow: 0 8px 32px rgba(91, 45, 142, 0.25);
     }
-    .contact-card .icon { font-size: 3rem; margin-bottom: 12px; }
-    .contact-card h2 { font-size: 1.5rem; font-weight: 900; margin-bottom: 8px; }
-    .contact-card p { opacity: 0.85; margin-bottom: 24px; font-size: 1rem; font-weight: 600; }
+
+    .contact-card .icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-card h2 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      opacity: 0.85;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
     .contact-card a {
       display: inline-block;
       background: var(--yellow);
@@ -86,9 +145,13 @@
       border-radius: 50px;
       text-decoration: none;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     }
-    .contact-card a:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+
+    .contact-card a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
 
     /* ── FAQ ── */
     .faq-title {
@@ -102,7 +165,7 @@
       background: #fff;
       border-radius: 18px;
       margin-bottom: 14px;
-      box-shadow: 0 2px 12px rgba(91,45,142,0.07);
+      box-shadow: 0 2px 12px rgba(91, 45, 142, 0.07);
       overflow: hidden;
     }
 
@@ -123,20 +186,27 @@
       gap: 12px;
     }
 
-    .faq-q:hover { background: #f9f3ff; }
+    .faq-q:hover {
+      background: #f9f3ff;
+    }
 
     .faq-q .arrow {
       flex-shrink: 0;
-      width: 28px; height: 28px;
+      width: 28px;
+      height: 28px;
       background: #f0e8ff;
       border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 0.75rem;
       color: var(--purple);
       transition: transform 0.25s;
     }
 
-    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+    .faq-item.open .faq-q .arrow {
+      transform: rotate(180deg);
+    }
 
     .faq-a {
       max-height: 0;
@@ -172,25 +242,57 @@
       background: #fff;
       border-radius: 18px;
       padding: 24px 20px;
-      box-shadow: 0 2px 12px rgba(91,45,142,0.07);
+      box-shadow: 0 2px 12px rgba(91, 45, 142, 0.07);
     }
-    .tip-card .icon { font-size: 2rem; margin-bottom: 10px; }
-    .tip-card h4 { font-size: 0.95rem; font-weight: 800; margin-bottom: 6px; color: var(--text); }
-    .tip-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; font-weight: 600; }
+
+    .tip-card .icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .tip-card h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .tip-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      font-weight: 600;
+    }
 
     /* ── FOOTER ── */
     footer {
       background: #1a1040;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       text-align: center;
       padding: 32px 24px;
       font-size: 0.9rem;
     }
-    footer a { color: var(--yellow); text-decoration: none; font-weight: 700; margin: 0 10px; }
-    footer a:hover { text-decoration: underline; }
-    footer .brand { font-size: 1rem; font-weight: 900; color: #fff; margin-bottom: 8px; }
+
+    footer a {
+      color: var(--yellow);
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer .brand {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 8px;
+    }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -203,7 +305,7 @@
     <h1>👋 How can we help?</h1>
     <p>Find answers below or contact our support team directly.</p>
     <svg class="hero-wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#fff8f0"/>
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#fff8f0" />
     </svg>
   </div>
 
@@ -214,7 +316,7 @@
       <div class="icon">✉️</div>
       <h2>Contact Support</h2>
       <p>Our team usually responds within 24 hours on business days.</p>
-      <a href="mailto:support@hounviotech.com">support@hounviotech.com</a>
+      <a href="mailto:cyrille@hounviotech.com">cyrille@hounviotech.com</a>
     </div>
 
     <!-- FAQ -->
@@ -226,7 +328,9 @@
         <span class="arrow">▼</span>
       </button>
       <div class="faq-a">
-        LittleMinds Learning is designed for children aged 2 to 10, divided into four groups: Toddler Explorer (2–3), Preschool Explorer (4–5), Junior Explorer (6–7), and Advanced Learner (8–10). Each group has its own tailored content, task difficulty, and subject mix.
+        LittleMinds Learning is designed for children aged 2 to 10, divided into four groups: Toddler Explorer (2–3),
+        Preschool Explorer (4–5), Junior Explorer (6–7), and Advanced Learner (8–10). Each group has its own tailored
+        content, task difficulty, and subject mix.
       </div>
     </div>
 
@@ -236,7 +340,9 @@
         <span class="arrow">▼</span>
       </button>
       <div class="faq-a">
-        From the app's home screen, tap the "Parents" button and log in with your parent account. The dashboard shows your child's total stars earned, tasks completed, modules finished, stickers unlocked, and a full subject-by-subject breakdown. Progress is updated in real time.
+        From the app's home screen, tap the "Parents" button and log in with your parent account. The dashboard shows
+        your child's total stars earned, tasks completed, modules finished, stickers unlocked, and a full
+        subject-by-subject breakdown. Progress is updated in real time.
       </div>
     </div>
 
@@ -246,7 +352,8 @@
         <span class="arrow">▼</span>
       </button>
       <div class="faq-a">
-        At the moment, password reset is handled by our support team. Please email us at support@hounviotech.com with the email address linked to your account and we'll assist you promptly.
+        At the moment, password reset is handled by our support team. Please email us at cyrille@hounviotech.com with
+        the email address linked to your account and we'll assist you promptly.
       </div>
     </div>
 
@@ -256,7 +363,8 @@
         <span class="arrow">▼</span>
       </button>
       <div class="faq-a">
-        Yes — LittleMinds Learning is free to download. There are no ads and no in-app purchases. All 1,500+ tasks across all age groups are included at no cost.
+        Yes — LittleMinds Learning is free to download. There are no ads and no in-app purchases. All 1,500+ tasks
+        across all age groups are included at no cost.
       </div>
     </div>
 
@@ -266,7 +374,8 @@
         <span class="arrow">▼</span>
       </button>
       <div class="faq-a">
-        Progress is currently saved on the device. If your child switches to a new device, progress will start fresh. We plan to add cloud sync in a future update. Make sure not to delete the app to preserve progress.
+        Progress is currently saved on the device. If your child switches to a new device, progress will start fresh. We
+        plan to add cloud sync in a future update. Make sure not to delete the app to preserve progress.
       </div>
     </div>
 
@@ -276,7 +385,8 @@
         <span class="arrow">▼</span>
       </button>
       <div class="faq-a">
-        The age group is set when you create your parent account. You can change it from the parent settings. Each age group has its own independent progress, so switching won't affect existing stars or task completions.
+        The age group is set when you create your parent account. You can change it from the parent settings. Each age
+        group has its own independent progress, so switching won't affect existing stars or task completions.
       </div>
     </div>
 
@@ -286,7 +396,9 @@
         <span class="arrow">▼</span>
       </button>
       <div class="faq-a">
-        First, try closing and reopening the app. If the problem persists, make sure you have the latest version installed from the App Store. Restarting your device often resolves temporary issues. If the issue continues, please email us at support@hounviotech.com with your device model and iOS version.
+        First, try closing and reopening the app. If the problem persists, make sure you have the latest version
+        installed from the App Store. Restarting your device often resolves temporary issues. If the issue continues,
+        please email us at cyrille@hounviotech.com with your device model and iOS version.
       </div>
     </div>
 
@@ -321,7 +433,7 @@
     <div class="brand">📚 LittleMinds Learning</div>
     <a href="./index.html">Home</a>
     <a href="./privacy.html">Privacy Policy</a>
-    <a href="mailto:support@hounviotech.com">Contact</a>
+    <a href="mailto:cyrille@hounviotech.com">Contact</a>
     <p style="margin-top:12px">© 2025 Hounvio Tech. All rights reserved.</p>
   </footer>
 
@@ -332,4 +444,5 @@
     }
   </script>
 </body>
+
 </html>
