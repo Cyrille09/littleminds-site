@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — LittleMinds Learning</title>
+  <meta name="description" content="Get help with LittleMinds Learning. FAQs, contact support, and troubleshooting guides." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #5b2d8e;
+      --purple-light: #7c4dbc;
+      --orange: #f07840;
+      --green: #4cc98a;
+      --yellow: #ffc94d;
+      --cream: #fff8f0;
+      --text: #2d2260;
+      --text-light: #6b5fa0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: linear-gradient(135deg, #3b1a6b, #6a2fbc);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    nav a { text-decoration: none; }
+    nav .logo { font-size: 1.4rem; font-weight: 900; color: #fff; }
+    nav .logo span { color: var(--yellow); }
+    nav .back { margin-left: auto; color: rgba(255,255,255,0.75); font-size: 0.9rem; font-weight: 700; }
+    nav .back:hover { color: #fff; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #3b1a6b 0%, #6a2fbc 100%);
+      text-align: center;
+      padding: 64px 24px 80px;
+      position: relative;
+    }
+    .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: #fff; margin-bottom: 12px; }
+    .hero p  { color: rgba(255,255,255,0.8); font-size: 1.05rem; font-weight: 600; }
+    .hero-wave {
+      position: absolute; bottom: -2px; left: 0; width: 100%;
+    }
+
+    /* ── BODY ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--purple), var(--purple-light));
+      color: #fff;
+      border-radius: 24px;
+      padding: 36px 32px;
+      text-align: center;
+      margin-bottom: 56px;
+      box-shadow: 0 8px 32px rgba(91,45,142,0.25);
+    }
+    .contact-card .icon { font-size: 3rem; margin-bottom: 12px; }
+    .contact-card h2 { font-size: 1.5rem; font-weight: 900; margin-bottom: 8px; }
+    .contact-card p { opacity: 0.85; margin-bottom: 24px; font-size: 1rem; font-weight: 600; }
+    .contact-card a {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--text);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .contact-card a:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+
+    /* ── FAQ ── */
+    .faq-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border-radius: 18px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 12px rgba(91,45,142,0.07);
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 22px 24px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .faq-q:hover { background: #f9f3ff; }
+
+    .faq-q .arrow {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      background: #f0e8ff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      color: var(--purple);
+      transition: transform 0.25s;
+    }
+
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      font-weight: 600;
+      padding: 0 24px;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 400px;
+      padding: 0 24px 22px;
+    }
+
+    /* ── TROUBLESHOOTING ── */
+    .section-title-2 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--text);
+      margin: 48px 0 20px;
+    }
+
+    .tip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .tip-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px 20px;
+      box-shadow: 0 2px 12px rgba(91,45,142,0.07);
+    }
+    .tip-card .icon { font-size: 2rem; margin-bottom: 10px; }
+    .tip-card h4 { font-size: 0.95rem; font-weight: 800; margin-bottom: 6px; color: var(--text); }
+    .tip-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #1a1040;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--yellow); text-decoration: none; font-weight: 700; margin: 0 10px; }
+    footer a:hover { text-decoration: underline; }
+    footer .brand { font-size: 1rem; font-weight: 900; color: #fff; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span>📚</span>
+    <a href="./index.html" class="logo">Little<span>Minds</span></a>
+    <a href="./index.html" class="back">← Back to home</a>
+  </nav>
+
+  <div class="hero">
+    <h1>👋 How can we help?</h1>
+    <p>Find answers below or contact our support team directly.</p>
+    <svg class="hero-wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#fff8f0"/>
+    </svg>
+  </div>
+
+  <div class="container">
+
+    <!-- Contact -->
+    <div class="contact-card">
+      <div class="icon">✉️</div>
+      <h2>Contact Support</h2>
+      <p>Our team usually responds within 24 hours on business days.</p>
+      <a href="mailto:support@hounviotech.com">support@hounviotech.com</a>
+    </div>
+
+    <!-- FAQ -->
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        What age groups does LittleMinds support?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        LittleMinds Learning is designed for children aged 2 to 10, divided into four groups: Toddler Explorer (2–3), Preschool Explorer (4–5), Junior Explorer (6–7), and Advanced Learner (8–10). Each group has its own tailored content, task difficulty, and subject mix.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        How does the Parent Dashboard work?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        From the app's home screen, tap the "Parents" button and log in with your parent account. The dashboard shows your child's total stars earned, tasks completed, modules finished, stickers unlocked, and a full subject-by-subject breakdown. Progress is updated in real time.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        I forgot my parent account password. What do I do?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        At the moment, password reset is handled by our support team. Please email us at support@hounviotech.com with the email address linked to your account and we'll assist you promptly.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        Is LittleMinds Learning free?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        Yes — LittleMinds Learning is free to download. There are no ads and no in-app purchases. All 1,500+ tasks across all age groups are included at no cost.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        Will my child's progress be saved if they change device?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        Progress is currently saved on the device. If your child switches to a new device, progress will start fresh. We plan to add cloud sync in a future update. Make sure not to delete the app to preserve progress.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        How do I unlock more age groups?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        The age group is set when you create your parent account. You can change it from the parent settings. Each age group has its own independent progress, so switching won't affect existing stars or task completions.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggle(this)">
+        The app is crashing or not loading. How do I fix it?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-a">
+        First, try closing and reopening the app. If the problem persists, make sure you have the latest version installed from the App Store. Restarting your device often resolves temporary issues. If the issue continues, please email us at support@hounviotech.com with your device model and iOS version.
+      </div>
+    </div>
+
+    <!-- Troubleshooting -->
+    <h2 class="section-title-2">🛠️ Quick Troubleshooting</h2>
+    <div class="tip-grid">
+      <div class="tip-card">
+        <div class="icon">🔄</div>
+        <h4>Update the app</h4>
+        <p>Go to the App Store → Updates → LittleMinds and install the latest version.</p>
+      </div>
+      <div class="tip-card">
+        <div class="icon">📶</div>
+        <h4>Check your connection</h4>
+        <p>The app works offline, but syncing features need a stable internet connection.</p>
+      </div>
+      <div class="tip-card">
+        <div class="icon">🔁</div>
+        <h4>Restart the app</h4>
+        <p>Swipe the app away from the app switcher and reopen it fresh.</p>
+      </div>
+      <div class="tip-card">
+        <div class="icon">📱</div>
+        <h4>Restart your device</h4>
+        <p>A quick reboot fixes most performance and loading issues on any device.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="brand">📚 LittleMinds Learning</div>
+    <a href="./index.html">Home</a>
+    <a href="./privacy.html">Privacy Policy</a>
+    <a href="mailto:support@hounviotech.com">Contact</a>
+    <p style="margin-top:12px">© 2025 Hounvio Tech. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggle(btn) {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
